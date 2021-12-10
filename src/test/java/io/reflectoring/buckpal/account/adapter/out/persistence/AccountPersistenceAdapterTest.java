@@ -44,9 +44,9 @@ class AccountPersistenceAdapterTest {
 
     adapterUnderTest.updateActivities(account);
 
-    assertThat(activityRepository.count()).isEqualTo(1);
+    assertThat(activityRepository.count()).isEqualTo(9);
 
     ActivityJpaEntity savedActivity = activityRepository.findAll().get(0);
-    assertThat(savedActivity.getAmount()).isEqualTo(1L);
+    assertThat(savedActivity.getAmount()).isEqualTo(500L);
   }
 }
