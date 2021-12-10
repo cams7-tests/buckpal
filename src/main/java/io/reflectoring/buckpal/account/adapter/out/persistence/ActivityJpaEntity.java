@@ -1,9 +1,12 @@
 package io.reflectoring.buckpal.account.adapter.out.persistence;
 
+import static javax.persistence.GenerationType.SEQUENCE;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import java.time.LocalDateTime;
@@ -13,29 +16,31 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "activity")
+@Table(name = "tb_activity")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 class ActivityJpaEntity {
 
 	@Id
-	@GeneratedValue
+	@SequenceGenerator(name = "sq_activity", sequenceName = "sq_activity", allocationSize = 1, initialValue = 1)
+	@GeneratedValue(strategy = SEQUENCE, generator = "sq_activity")
+	@Column(name = "id_activity")
 	private Long id;
 
-	@Column
+	@Column(name = "transaction_datetime")
 	private LocalDateTime timestamp;
 
-	@Column
+	@Column(name="owner_account_id")
 	private Long ownerAccountId;
 
-	@Column
+	@Column(name="source_account_id")
 	private Long sourceAccountId;
 
-	@Column
+	@Column(name="target_account_id")
 	private Long targetAccountId;
 
-	@Column
+	@Column(name="amount")
 	private Long amount;
 
 }

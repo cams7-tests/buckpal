@@ -2,6 +2,7 @@ package io.reflectoring.buckpal.account.application.service;
 
 import io.reflectoring.buckpal.account.domain.Money;
 
+@SuppressWarnings("serial")
 public class ThresholdExceededException extends RuntimeException {
 
   public ThresholdExceededException(Money threshold, Money actual) {

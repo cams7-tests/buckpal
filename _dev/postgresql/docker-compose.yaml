@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:10
+    environment:
+      POSTGRES_PASSWORD: "Abc@12345"
+    ports:
+      - "15432:5432"
+    volumes:
+      - buckpal-data:/var/lib/postgresql/data 
+    networks:
+      - buckpal-network
+      
+  pgadmin:
+    image: dpage/pgadmin4:6.2
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "admin@cams7.tests"
+      PGADMIN_DEFAULT_PASSWORD: "Abc@12345"
+    ports:
+      - "16543:80"
+    depends_on:
+      - postgres
+    networks:
+      - buckpal-network
+
+networks: 
+  buckpal-network:
+    driver: bridge
+
+volumes:
+  buckpal-data:

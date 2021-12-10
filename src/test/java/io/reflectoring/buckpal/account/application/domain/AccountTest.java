@@ -1,6 +1,10 @@
-package io.reflectoring.buckpal.account.domain;
+package io.reflectoring.buckpal.account.application.domain;
 
+import io.reflectoring.buckpal.account.domain.Account;
 import io.reflectoring.buckpal.account.domain.Account.AccountId;
+import io.reflectoring.buckpal.account.domain.ActivityWindow;
+import io.reflectoring.buckpal.account.domain.Money;
+
 import org.junit.jupiter.api.Test;
 import static io.reflectoring.buckpal.common.AccountTestData.*;
 import static io.reflectoring.buckpal.common.ActivityTestData.*;

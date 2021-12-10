@@ -35,7 +35,7 @@ class SendMoneySystemTest {
 		Money initialSourceBalance = sourceAccount().calculateBalance();
 		Money initialTargetBalance = targetAccount().calculateBalance();
 
-		ResponseEntity response = whenSendMoney(
+		var response = whenSendMoney(
 				sourceAccountId(),
 				targetAccountId(),
 				transferredAmount());
@@ -88,10 +88,10 @@ class SendMoneySystemTest {
 		return Money.of(500L);
 	}
 
-	private Money balanceOf(AccountId accountId) {
-		Account account = loadAccountPort.loadAccount(accountId, LocalDateTime.now());
-		return account.calculateBalance();
-	}
+//	private Money balanceOf(AccountId accountId) {
+//		Account account = loadAccountPort.loadAccount(accountId, LocalDateTime.now());
+//		return account.calculateBalance();
+//	}
 
 	private AccountId sourceAccountId() {
 		return new AccountId(1L);
