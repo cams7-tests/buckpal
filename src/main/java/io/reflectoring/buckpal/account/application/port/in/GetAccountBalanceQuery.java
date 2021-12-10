@@ -5,6 +5,5 @@ import io.reflectoring.buckpal.account.domain.Money;
 
 public interface GetAccountBalanceQuery {
 
-	Money getAccountBalance(AccountId accountId);
-
+  Money getAccountBalance(AccountId accountId);
 }

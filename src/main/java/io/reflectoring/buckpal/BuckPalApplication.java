@@ -9,5 +9,4 @@ public class BuckPalApplication {
   public static void main(String[] args) {
     SpringApplication.run(BuckPalApplication.class, args);
   }
-
 }

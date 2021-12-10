@@ -1,12 +1,12 @@
 package io.reflectoring.buckpal.archunit;
 
-import java.util.List;
-
-import com.tngtech.archunit.core.domain.JavaClasses;
-import com.tngtech.archunit.core.importer.ClassFileImporter;
 import static com.tngtech.archunit.base.DescribedPredicate.*;
 import static com.tngtech.archunit.lang.conditions.ArchConditions.*;
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.*;
+
+import com.tngtech.archunit.core.domain.JavaClasses;
+import com.tngtech.archunit.core.importer.ClassFileImporter;
+import java.util.List;
 
 abstract class ArchitectureElement {
 

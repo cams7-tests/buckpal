@@ -8,5 +8,4 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public class BuckPalConfigurationProperties {
 
   private long transferThreshold = Long.MAX_VALUE;
-
 }
